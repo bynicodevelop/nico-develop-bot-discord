@@ -20,6 +20,8 @@ bot.on("guildMemberAdd", member => {
     const firstMessageString = `{N'hésite pas à|Profites-en pour nous} en dire plus sur {ton langage préféré|quel langage tu es|la techno que tu utilises} et {tes objectifs|quels sont tes objectif}`
 
     member.guild.channels.cache.find(ch => ch.name === 'général').send(spin(welcomeString))
+    member.guild.channels.cache.find(ch => ch.name === 'général').send("C'est Mr Robot qui parle")
+    member.guild.channels.cache.find(ch => ch.name === 'général').send("Nico n'est pas très loin, mais il m'a demandé de prendre le relais, alors...")
     member.guild.channels.cache.find(ch => ch.name === 'général').send(spin(firstMessageString))
 });
 
