@@ -3,11 +3,15 @@ const env = require('dotenv').config()
 const Discord = require('discord.js')
 const bot = new Discord.Client()
 
-if (env.error) {
+let config = {}
+
+if (env.error && !process.env.TOKEN) {
     throw env.error
 }
 
-const config = env.parsed
+if(!process.env.TOKEN) {
+    config = env.parsed
+}
 
 bot.on("guildMemberAdd", member => {
     const username = member.user.username
