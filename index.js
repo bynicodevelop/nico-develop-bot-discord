@@ -19,4 +19,4 @@ bot.on("guildMemberAdd", member => {
     member.guild.channels.cache.find(ch => ch.name === 'général').send(spin(firstMessageString))
 });
 
-bot.login(config.TOKEN)
+bot.login(config.TOKEN || process.env.TOKEN)
